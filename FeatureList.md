@@ -40,3 +40,84 @@
         - The amount of long tasks
         - The amount of short tasks
     - Start a game
+- When player is inside of the lobby:
+    - Prevent breaking blocks and using of commands except to leave and manage option of the game
+    - Teleported to the lobby location of the game with inventory cleared, and fully healed
+    - Save of the player before joining the game (that will be restored at the end of the game or when he leaves the game):
+        - Player inventory
+        - Player location
+        - Player gamemode
+        - Player health
+        - Player hunger
+        - Player Potions
+    - Ability to modify the option when player is the host
+    - scoreboard (displayed for all players who join the lobby) here is what it display:
+        - Title of the scoreboard is the game display name
+        - The amount of players that has currently joined with color changing depending on amount:
+            - Red: There is not enought players to start the game
+            - Yellow: There is enought players to start the game, but not that much for a good game
+            - Green: There is enought players inside of the game to start a good game :)
+        - The host of the game
+        - The max players that are allowed to join
+        - The amount of impostors displayed
+        - The voting time
+        - The kill cooldown
+        - The amount of emergency meetings per players
+        - The impostor vision
+        - The crewmate vision
+        - The common tasks amount
+        - The long tasks amount
+        - The short tasks amount
+- Inside of the game:
+    - Pre-check that the game can be started (enought players and impostors)
+    - Teleport all players to game spawn
+    - Roles are randomly given to players (impostors or crewmate, and the amount of impostors specified in the game configuration)
+    - Role displayed to the player as a title
+    - Able to start a task for crewmate
+    - A fake body is left behind the player which real body is inside of the task "zone"
+    - Ability to kill real and "fake" players for impostors
+    - Dead body left behind a dead player
+    - Dead body can be reported
+    - Dead players can see the others but others can't see them
+    - Emergency meetings can be called when clicking on the buzzer block of the game
+    - During an emergency meeting:
+        - Dead bodies and fake bodies are removed and players are ejected from their task without completion of them
+        - Players can vote by clicking on the buzzer, then a gui showing all heads of players to vote is displayed
+        - At the end of the emergency meeting, the player who has the most vote is ejected
+    - Scoreboard displayed showing progress of tasks and as title the percentage progress
+    - Compass given to the player pointing to the selected task:
+        - Left click with the compass: select next task
+        - Right click with the compass: select previous task
+    - Display of a hologram above the buzzer block (emergency meeting block) in order to make the player be able to know where is the location of this buzzer
+    - Display hologram above all tasks for the user, and a text is written telling the user if he need to do (or not to do) the task.
+    - Scoreboard in game:
+        - Title: Game display name
+        - Role of the player (&cImpostor or &aCrewmate)
+        - Kill cooldown (only for impostors)
+        - Status (dead or alive)
+        - Tasks (only for Crewmates):
+            - Display a list of all tasks display name that the user has to do with red icon: ✘ and green :heavy_check_mark: (this icon look better in game) if finished
+            - Show the current selected task by the compass to the user
+- Inside of taks:
+    - Joined by right clicking on a sign in game or using the test command
+    - A new "zone" is pasted for the player
+    - Player is teleported to the spawn of the task
+    - If the player join a task during a game (and not during the test command):
+        - A fake body is left behind him
+        - The leave sign is working to leave the task before finishing it. It teleport the player back removing the fake body.
+        - When the task is finished (when the redstone that has to be alimented is alimented):
+            - Player is teleported back
+            - Fake body is removed
+            - Advancement for the game progress bar are made
+- End of the game:
+    - After a kill of impostor check if there is enought players to continue otherwise the impostors wins
+    - After ejecting a player with vote, if there is not enought impostors, crewmates win, if there is not enought crewmate, impostors win
+    - After crewmate has finished all their tasks
+    - If the game end:
+        - Victory or Loose is displayed as a title, and impostors are revealed
+        - Players are restored to their previous location like if they never joined the game
+- Security:
+    - Tasks and Game ids can only contain lowercase letters and numbers
+    - If the server stop during a game or there is a server crash, then the players that are in-game are still restored like if they did never joined the game (their stuff is not lost nor their location)
+    - Players cannot join a game just to restore their health or hunger since the restoration also restore their health and hunger to what it was before they join the game
+    - The default gamemode of players in-game is survival, when they leave the game their gamemode is restored to what it was before they join  (so op players that are in creative don't need to go back in survival, and if the default gamemode of your server is creative/advanture, then the players are back to their default gamemode)
