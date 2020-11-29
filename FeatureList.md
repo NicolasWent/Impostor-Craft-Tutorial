@@ -34,6 +34,7 @@
     - Host a game
     - Join a game
     - Leave a game
+    - List all games with their status and amount of player in the game
     - Edit options of the game:
         - Amount of impostors
         - The voting time
