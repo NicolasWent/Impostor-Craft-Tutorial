@@ -56,6 +56,8 @@
         - Player health
         - Player hunger
         - Player Potions
+        - If the player is flying or not
+        - If the player can fly or not
     - Ability to modify the option when player is the host
     - scoreboard (displayed for all players who join the lobby) here is what it display:
         - Title of the scoreboard is the game display name
@@ -92,6 +94,8 @@
     - Impostors can right click with the compass to open the sabotage menu
     - For crewmates and impostor: when a sabotage occur, their compass points instantly to the sabotage that they have to fix
     - Dead body report stops sabotage and calls emergency meeting
+    - Impostors can only have one sabotage at a time active.
+    - When sabotage is finished, crewmates and impostors compass is restored to default
     - During an emergency meeting:
         - Dead bodies and fake bodies are removed and players are ejected from their task without completion of them
         - Players can vote by clicking on the buzzer, then a gui showing all heads of players to vote is displayed
@@ -113,6 +117,7 @@
         - Active sabotage list (if any are present)
         - Sabotage list (only for Impostors):
             - The sabotage display name with the cooldown of it
+    - When a sabotage occur, a title with the display name of the sabotage is displayed
 - Inside of taks:
     - Joined by right clicking on a sign in game or using the test command
     - A new "zone" is pasted for the player
@@ -136,3 +141,28 @@
     - If the server stop during a game or there is a server crash, then the players that are in-game are still restored like if they did never joined the game (their stuff is not lost nor their location)
     - Players cannot join a game just to restore their health or hunger since the restoration also restore their health and hunger to what it was before they join the game
     - The default gamemode of players in-game is survival, when they leave the game their gamemode is restored to what it was before they join  (so op players that are in creative don't need to go back in survival, and if the default gamemode of your server is creative/advanture, then the players are back to their default gamemode)
+- Sabotage:
+    - Sabotage gui:
+        - Light: A list of randomly placed red and green wools. When the user click on the wool, it change his color (from red to green and from green to red), once the user has a full line of green wools, then the sabotage is completed
+    - Possibility to list all sabotages available
+    - Possibility to list all Gui sabotages
+    - Get infos about a sabotage
+    - delete a sabotage
+    - Edit a sabotage:
+        - Display name of the sabotage (the display name of the sabotage that will be seen inside of the game)
+        - Type of the sabotage:
+            - End: If the sabotage occur, then players have only 40 seconds to fix the sabotage before the game ends.
+            - Potion: You can setup any potion effect that you want, when you select this type, a GUI is openned allowing you to customise your sabotage:
+                - Type of the potion (blindness, slowness, invisibility...)
+                - Power of the potion (for example Slowness II if 2 is selected)
+                - Target of the potion:
+                    - Crewmates: The potion will be applied only to crewmates
+                    - Impostors: The potion will be applied only to impostors
+                    - Everyone: The potion will be applied to every player of the game
+                - Please not that potions given by sabotage does not leave any particles, so no one can know who was affected or not
+        - Solving of the sabotage:
+            - Task: You can select a task that you created that players has to solve in order to repair the sabotage.
+            - Gui: You can select any gui that is coded by ourself:
+                - lights: A gui with red and green wool when player click on a wool, the wool change to the other color (green to red and red to green), the sabotage is fixed when the lign only contain green wools
+        - Set icon for a sabotage to any item that you want
+     
