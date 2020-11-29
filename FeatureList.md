@@ -40,6 +40,7 @@
         - The max players that are allowed to join
         - The amount of emergency meetings per players
         - The crewmate vision
+        - The cooldown between each sabotage
         - Impostor vision
         - The amount of common tasks
         - The amount of long tasks
@@ -84,11 +85,13 @@
     - Dead body left behind a dead player
     - Dead body can be reported
     - Dead players can see the others but others can't see them
-    - Emergency meetings can be called when clicking on the buzzer block of the game
+    - Emergency meetings can be called when clicking on the buzzer block of the game or by right clicking on a dead body
     - Drop of items is prevented during game
     - A compass is given to players pointing to the task/sabotage that they have to do/solve
     - Crewmates can right/left click with compass to change the pointing of the compass to next/previous task.
     - Impostors can right click with the compass to open the sabotage menu
+    - For crewmates and impostor: when a sabotage occur, their compass points instantly to the sabotage that they have to fix
+    - Dead body report stops sabotage and calls emergency meeting
     - During an emergency meeting:
         - Dead bodies and fake bodies are removed and players are ejected from their task without completion of them
         - Players can vote by clicking on the buzzer, then a gui showing all heads of players to vote is displayed
