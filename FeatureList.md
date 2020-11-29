@@ -28,7 +28,8 @@
         - The location of the description (a hologram that shows the user what he have to do to complete the task)
         - The location where the player will spawn when starting this task
         - The redstone that has to be powered in order to finish the task
-    - Test a task (leave sign not working during a test, but in-game the leave sign is working)
+        - The inventory that player will have inside of the task
+    - Test a task
 - Game management:
     - Host a game
     - Join a game
@@ -122,6 +123,8 @@
     - Joined by right clicking on a sign in game or using the test command
     - A new "zone" is pasted for the player
     - Player is teleported to the spawn of the task
+    - Inventory of player is replaced by the inventory of the task (or cleared if there is not inventory)
+    - Players can place any block that is in his inventory and break only the blocks that he has placed
     - If the player join a task during a game (and not during the test command):
         - A fake body is left behind him
         - The leave sign is working to leave the task before finishing it. It teleport the player back removing the fake body.
@@ -165,4 +168,3 @@
             - Gui: You can select any gui that is coded by ourself:
                 - lights: A gui with red and green wool when player click on a wool, the wool change to the other color (green to red and red to green), the sabotage is fixed when the lign only contain green wools
         - Set icon for a sabotage to any item that you want
-     
