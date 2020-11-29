@@ -1,5 +1,6 @@
 - Game:
     - Creating a game
+    - Deleting a game
     - Editing a game:
         - Display name of the game
         - Set the lobby location
@@ -10,6 +11,10 @@
     - Listing of all games
     - Get information about a game
     - Set a global location to paste all the tasks
+    - Add task to game
+    - Add sabotage to game
+    - Remove task/sabotage of the game by breaking the sign associated to it
+    - Multiple times the same task can be added to the game
 - Task:
     - Create a task
     - List of all tasks
@@ -80,11 +85,15 @@
     - Dead body can be reported
     - Dead players can see the others but others can't see them
     - Emergency meetings can be called when clicking on the buzzer block of the game
+    - Drop of items is prevented during game
+    - A compass is given to players pointing to the task/sabotage that they have to do/solve
+    - Crewmates can right/left click with compass to change the pointing of the compass to next/previous task.
+    - Impostors can right click with the compass to open the sabotage menu
     - During an emergency meeting:
         - Dead bodies and fake bodies are removed and players are ejected from their task without completion of them
         - Players can vote by clicking on the buzzer, then a gui showing all heads of players to vote is displayed
         - At the end of the emergency meeting, the player who has the most vote is ejected
-    - Scoreboard displayed showing progress of tasks and as title the percentage progress
+    - Boss bar displayed showing progress of tasks and as title the percentage progress
     - Compass given to the player pointing to the selected task:
         - Left click with the compass: select next task
         - Right click with the compass: select previous task
@@ -98,6 +107,9 @@
         - Tasks (only for Crewmates):
             - Display a list of all tasks display name that the user has to do with red icon: ✘ and green :heavy_check_mark: (this icon look better in game) if finished
             - Show the current selected task by the compass to the user
+        - Active sabotage list (if any are present)
+        - Sabotage list (only for Impostors):
+            - The sabotage display name with the cooldown of it
 - Inside of taks:
     - Joined by right clicking on a sign in game or using the test command
     - A new "zone" is pasted for the player
